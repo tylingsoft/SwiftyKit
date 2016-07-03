@@ -10,8 +10,6 @@
 		D47B38DE1D28CEC600526577 /* SwiftyRegex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D47B38D41D28CEC600526577 /* SwiftyRegex.framework */; };
 		D47B38E31D28CEC600526577 /* SwiftyRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B38E21D28CEC600526577 /* SwiftyRegexTests.swift */; };
 		D47B38EC1D28CF5D00526577 /* SwiftyRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B38EB1D28CF5D00526577 /* SwiftyRegex.swift */; };
-		D47B38EE1D28D38000526577 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D47B38ED1D28D38000526577 /* README.md */; };
-		D47B38F01D28D3FE00526577 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D47B38EF1D28D3FE00526577 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,8 +199,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47B38F01D28D3FE00526577 /* README.md in Sources */,
-				D47B38EE1D28D38000526577 /* README.md in Sources */,
 				D47B38EC1D28CF5D00526577 /* SwiftyRegex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

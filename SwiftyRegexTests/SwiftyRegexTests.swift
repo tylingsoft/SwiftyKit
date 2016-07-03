@@ -24,23 +24,35 @@ class SwiftyRegexTests: XCTestCase {
     func testMatch() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertTrue("123456" =~ "^\\d+$")
+        XCTAssert("123456" =~ "^\\d+$")
     }
     
     func testSub() {
-        XCTAssertTrue("2bb" == "bbb".sub("b", withString: "2"))
+        XCTAssertEqual("2bb", "bbb".sub("b", withString: "2"))
     }
     
     func testGsub() {
-        XCTAssertTrue("222" == "bbb".gsub("b", withString: "2"))
+        XCTAssertEqual("222", "bbb".gsub("b", withString: "2"))
     }
     
     func testScan() {
-        XCTAssertTrue(["123", "456", "7890"] == "(123) 456-7890".scan("\\d+"))
+        XCTAssertEqual(["123", "456", "7890"], "(123) 456-7890".scan("\\d+"))
     }
     
     func testSplit() {
-        XCTAssertTrue(["aaa", "bbb", "ccc", "ddd"] == "aaa123bbb456ccc789ddd".split("\\d+"))
+        XCTAssertEqual(["aaa", "bbb", "ccc", "ddd"], "aaa123bbb456ccc789ddd".split("\\d+"))
+        XCTAssertEqual(["", "aaa", "bbb", "ccc", "ddd"], "0aaa123bbb456ccc789ddd".split("\\d+"))
+        XCTAssertEqual(["aaa", "bbb", "ccc", "ddd"], "0aaa123bbb456ccc789ddd10".split("\\d+", removeEmptyEntries: true))
+    }
+
+    func testUnicode() {
+        XCTAssertEqual(1, "🐶".characters.count)
+        XCTAssertEqual(4, "🐶".utf8.count)
+        XCTAssertEqual(2, "🐶".utf16.count)
+        XCTAssertEqual(1, "a".characters.count)
+        XCTAssertEqual(1, "a".utf8.count)
+        XCTAssertEqual(1, "a".utf16.count)
+        XCTAssertEqual(["Hello", "World"], "!Hello~`!@#$%^&*()_+={}[]|\\;:'\"<>,.?/World! こんにちは! สวัสดี! مرحبا! 您好!".split("[^A-Za-z]+", removeEmptyEntries: true))
     }
     
     func testPerformanceExample() {

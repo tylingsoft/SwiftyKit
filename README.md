@@ -5,7 +5,7 @@ Make the Swift language easier to use.
 
 ## Frameworks included:
 
-- [SwiftyRegex](SwiftRegex)
+- [SwiftyRegex](SwiftyRegex)
 
 
 ## Installation
