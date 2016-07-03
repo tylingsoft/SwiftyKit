@@ -1,15 +1,15 @@
 //
-//  SwiftyKitTests.swift
-//  SwiftyKitTests
+//  SwiftyRegexTests.swift
+//  SwiftyRegexTests
 //
 //  Created by Tyler Long on 7/3/16.
 //  Copyright © 2016 Tylingsoft. All rights reserved.
 //
 
 import XCTest
-@testable import SwiftyKit
+@testable import SwiftyRegex
 
-class SwiftyKitTests: XCTestCase {
+class SwiftyRegexTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,9 +21,26 @@ class SwiftyKitTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testMatch() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue("123456" =~ "^\\d+$")
+    }
+    
+    func testSub() {
+        XCTAssertTrue("2bb" == "bbb".sub("b", withString: "2"))
+    }
+    
+    func testGsub() {
+        XCTAssertTrue("222" == "bbb".gsub("b", withString: "2"))
+    }
+    
+    func testScan() {
+        XCTAssertTrue(["123", "456", "7890"] == "(123) 456-7890".scan("\\d+"))
+    }
+    
+    func testSplit() {
+        XCTAssertTrue(["aaa", "bbb", "ccc", "ddd"] == "aaa123bbb456ccc789ddd".split("\\d+"))
     }
     
     func testPerformanceExample() {
