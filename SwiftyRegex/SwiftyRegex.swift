@@ -63,7 +63,7 @@ public extension String {
 private extension NSRegularExpression {
 
     private func matches(input: String) -> [NSTextCheckingResult] {
-        return self.matchesInString(input, options: NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, input.characters.count))
+        return self.matchesInString(input, options: NSMatchingOptions.WithTransparentBounds, range: NSMakeRange(0, input.utf16.count))
     }
 
 }
